@@ -1,8 +1,6 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/gatsby-config/
- */
+require("dotenv").config({
+  path: ".env",
+})
 
 module.exports = {
   siteMetadata: {
@@ -28,7 +26,7 @@ module.exports = {
           private_key_id: process.env.PRIVATE_KEY_ID,
           private_key: process.env.PRIVATE_KEY.replace(/(\\r)|(\\n)/g, "\n"),
           client_email: process.env.CLIENT_EMAIL,
-          client_id: "",
+          client_id: process.env.CLIENT_ID,
           auth_uri: "https://accounts.google.com/o/oauth2/auth",
           token_uri: "https://oauth2.googleapis.com/token",
           auth_provider_x509_cert_url:
