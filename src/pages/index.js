@@ -28,7 +28,7 @@ const Company = ({ data }) => {
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     {
-      allGoogleFormResponses1Sheet {
+      allGoogleResponsesSheet {
         edges {
           node {
             company
@@ -54,7 +54,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <div className={companyList}>
-        {data.allGoogleFormResponses1Sheet.edges.map(edge => (
+        {data.allGoogleResponsesSheet.edges.map(edge => (
           <Company data={edge.node} />
         ))}
       </div>
