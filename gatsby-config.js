@@ -29,10 +29,11 @@ const buildCredentials = ({
 
 module.exports = {
   siteMetadata: {
-    title: "MANIT Placements",
+    title: "MANIT Placements 2021",
     author: "archgaelix",
   },
   plugins: [
+    "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
     {
       resolve: "gatsby-source-filesystem",
