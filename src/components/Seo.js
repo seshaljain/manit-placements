@@ -61,7 +61,7 @@ const Seo = ({ description, lang, meta, title }) => {
         },
       ].concat(meta || [])}
     >
-      <body className="bg-gray-100" />
+      <body className="bg-gray-800 text-gray-50" />
     </Helmet>
   )
 }

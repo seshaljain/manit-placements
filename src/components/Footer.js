@@ -12,8 +12,17 @@ const Footer = () => {
     }
   `)
   return (
-    <footer>
-      <p>Created by {data.site.siteMetadata.author}</p>
+    <footer className="mx-2 my-4">
+      <p>
+        Created by{" "}
+        <a
+          href="https://github.com/seshaljain/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          {data.site.siteMetadata.author}
+        </a>
+      </p>
     </footer>
   )
 }
