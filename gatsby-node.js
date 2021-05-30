@@ -1,4 +1,4 @@
-const companyTemplate = require("path").resolve("src/templates/CompanyPage.js")
+const companyTemplate = require("path").resolve("src/templates/JobPage.js")
 
 exports.createPages = ({ actions, graphql, reporter }) =>
   graphql(`

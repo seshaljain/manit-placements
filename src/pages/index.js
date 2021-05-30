@@ -16,21 +16,21 @@ const IndexPage = ({ data }) => {
       <div className="flex flex-wrap justify-around my-4">
         <div className={`${dashboardCard} bg-red-400 text-red-50`}>
           <span className="text-4xl font-bold">
-            {data.googleSheet.Analysis[0].companyCount}
+            {data.googleAnalysisSheet.companyCount}
           </span>
           <br />
           <span className="text-lg font-semibold">Total Companies</span>
         </div>
         <div className={`${dashboardCard} bg-yellow-400 text-yellow-50`}>
           <span className="text-4xl font-bold">
-            {data.googleSheet.Analysis[0].offerCount}
+            {data.googleAnalysisSheet.offerCount}
           </span>
           <br />
           <span className="text-lg font-semibold">Total Offers</span>
         </div>
         <div className={`${dashboardCard} bg-green-400 text-green-50`}>
           <span class="text-4xl font-bold">
-            {data.googleSheet.Analysis[0].medianPackage}
+            {data.googleAnalysisSheet.medianPackage}
           </span>
 
           <span className="text-xl font-bold"> LPA</span>
@@ -39,7 +39,7 @@ const IndexPage = ({ data }) => {
         </div>
         <div className={`${dashboardCard} bg-purple-400 text-purple-50`}>
           <span class="text-4xl font-bold">
-            {data.googleSheet.Analysis[0].maxPackage}
+            {data.googleAnalysisSheet.maxPackage}
           </span>
           <span className="text-xl font-bold"> LPA</span>
           <br />
@@ -51,7 +51,7 @@ const IndexPage = ({ data }) => {
         {data.googleSheet.Responses.map(response => (
           <Link className="flex-auto m-2" to={makeUrl(response)}>
             <li>
-              <CompanyCard key={response.id} data={response} />
+              <CompanyCard key={response.id} details={response} />
             </li>
           </Link>
         ))}
@@ -70,18 +70,23 @@ export const data = graphql`
         companyName
         date
         position
-        jobDescription
         eligibleDepartments
         cTC__LPA_
         minimumGPA
-        selections
+        cSE
+        chem
+        civil
+        eCE
+        elec
+        mME
+        mech
       }
-      Analysis {
-        maxPackage
-        medianPackage
-        companyCount
-        offerCount
-      }
+    }
+    googleAnalysisSheet {
+      maxPackage
+      medianPackage
+      companyCount
+      offerCount
     }
   }
 `
